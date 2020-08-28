@@ -32,7 +32,7 @@
       <ul class="navbar-nav ml-auto" v-if="$auth.loggedIn">
         <span class="navbar-text text-white">{{ $auth.user.username }}</span>
         <li class="nav-item">
-          <a class="nav-link" href="#">logout</a>
+          <a class="nav-link" style="cursor: pointer;" v-on:click="userLogout">logout</a>
         </li>
       </ul>
 
@@ -48,3 +48,18 @@
     </div>
   </nav>
 </template>
+
+<script>
+export default {
+  methods: {
+    userLogout(event) {
+      event.preventDefault()
+
+      this.$auth.logout().then (res => {
+        console.log(res)
+      })
+    },
+  },
+}
+</script>
+

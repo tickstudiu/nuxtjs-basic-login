@@ -57,6 +57,11 @@ export default {
     '@nuxtjs/auth'
   ],
   auth: {
+    redirect: { 
+      login: '/login',
+      logout: '/login',
+      home: '/'
+    },
     strategies: {
       local: {
         endpoints: {
