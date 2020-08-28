@@ -54,10 +54,11 @@ export default {
     'bootstrap-vue/nuxt',
     // Doc: https://axios.nuxtjs.org/usage
     '@nuxtjs/axios',
-    '@nuxtjs/auth'
+    '@nuxtjs/auth',
+    '@nuxtjs/toast'
   ],
   auth: {
-    redirect: { 
+    redirect: {
       login: '/login',
       logout: '/login',
       home: '/'
@@ -72,10 +73,23 @@ export default {
         // tokenRequired: true,
         // globalToken: true,
         // autoFetchUser: true
-        tokenName:  'authorization',
+        tokenName: 'authorization',
         tokenType: false
       }
     }
+  },
+  toast: {
+    position: 'top-right',
+    duration: 900,
+    register: [ // Register custom toasts
+      {
+        name: 'my-error',
+        message: 'Oops...Something went wrong',
+        options: {
+          type: 'error'
+        }
+      }
+    ]
   },
   /*
   ** Axios module configuration
