@@ -35,7 +35,6 @@ export default {
   methods: {
     userLogin(event) {
       event.preventDefault()
-      this.$toast.show('Logging in...')
       this.$auth.loginWith('local', { data: this.login }).then((res) => {
         this.$toast.success('Successfully authenticated')
       })
