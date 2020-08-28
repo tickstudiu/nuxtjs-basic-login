@@ -69,10 +69,7 @@ export default {
   methods: {
     userLogout(event) {
       event.preventDefault()
-
-      this.$auth.logout().then (res => {
-        console.log(res)
-      })
+      this.$auth.logout()
     },
   },
 }

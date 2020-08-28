@@ -66,7 +66,7 @@ export default {
       local: {
         endpoints: {
           login: { url: 'http://imicontrol.com:5000/auth/login', method: 'post', propertyName: 'token' },
-          logout: { url: 'http://localhost:5000//auth/logout', method: 'delete' },
+          logout: { url: 'http://localhost:5000/auth/logout', method: 'delete' },
           user: { url: 'http://localhost:5000/auth/user', method: 'get', propertyName: 'user' }
         },
         // tokenRequired: true,
@@ -81,6 +81,9 @@ export default {
   ** Axios module configuration
   ** See https://axios.nuxtjs.org/options
   */
+  axios: {
+
+  },
   /*
   ** Build configuration
   ** See https://nuxtjs.org/api/configuration-build/

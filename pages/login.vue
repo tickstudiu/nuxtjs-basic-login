@@ -18,11 +18,17 @@
 
 <script>
 export default {
+  middleware({ store, redirect }) {
+    // If the user is not authenticated
+    if (store.state.auth.loggedIn) {
+      return redirect('/')
+    }
+  },
   data() {
     return {
       login: {
-        username: '',
-        password: '',
+        username: 'test7@gmail.com',
+        password: 'Aa123654',
       },
     }
   },
@@ -30,7 +36,7 @@ export default {
     userLogin(event) {
       event.preventDefault()
 
-      this.$auth.loginWith('local', { data: this.login }).then (res => {
+      this.$auth.loginWith('local', { data: this.login }).then((res) => {
         console.log(res)
       })
     },
