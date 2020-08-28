@@ -37,11 +37,26 @@
       </ul>
 
       <ul class="navbar-nav ml-auto" v-else>
+
+        <!-- login btn -->
         <li class="nav-item">
-          <a class="nav-link" href="#">login</a>
+          <span v-if="$nuxt.$route.path == '/login'">
+            <a class="nav-link active" style="cursor: pointer;">login</a>
+          </span>
+          <span v-else>
+            <nuxt-link class="nav-link" to="/login">login</nuxt-link>
+          </span>  
         </li>
+
+        <!-- reigster btn -->
         <li class="nav-item">
-          <a class="nav-link" href="#">register</a>
+          <span v-if="$nuxt.$route.path == '/register'">
+            <a class="nav-link active" style="cursor: pointer;">register</a>
+          </span>
+          <span v-else>
+            <nuxt-link class="nav-link" to="/register">register</nuxt-link>
+          </span>
+          
         </li>
       </ul>
       
